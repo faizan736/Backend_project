@@ -11,6 +11,8 @@
     "dev": "nodemon src/index.js"
   },
   "devDependencies": {
-    "nodemon": "^2.0.15"
-  }
+    "nodemon": "^2.0.15",
+    "prettier": "^3.5.3"
+  },
+  "dependencies": {}
 }
