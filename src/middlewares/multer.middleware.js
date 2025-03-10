@@ -27,3 +27,14 @@ b. filename Function:
 Determines the name of the saved file.
 file.originalname ensures the file keeps its original name
  */
+
+/*
+Your code is used for handling file uploads, so when a user uploads a picture (or any file) from their device (e.g., via a form), Multer:
+
+✅ Receives the file (e.g., an image from a form)
+✅ Saves it in the ./public/temp folder
+✅ Keeps the original file name
+
+So, if a user uploads a file called profile.jpg, it will be stored as:
+📂 ./public/temp/profile.jpg
+*/
