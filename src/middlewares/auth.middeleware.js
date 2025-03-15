@@ -21,7 +21,14 @@ export const verifyJWT = asyncHandler(async(req,res,next)=>{
     
             throw new ApiError(401,"Invalid access token")
         }
+        //Once we verify the token and fetch the user from the database, we need to make this user information available for the next middleware or route handler.
+        //By attaching it to req, it stays available throughout the request-response cycle.
+        //Any subsequent middleware or route handler can simply access req.user instead of fetching the user again from the database
         req.user = user;
+        /*
+              ✅ Use req.user to store user data because it persists throughout the request cycle.
+             ❌ Avoid res.user because res is for sending responses, not storing request-related data.
+        */
         next()
     } catch (error) {
         throw new ApiError(401,error?.message || "Invalid access token")
